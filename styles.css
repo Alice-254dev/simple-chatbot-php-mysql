@@ -1,0 +1,164 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* Chatbot Icon */
+
+.chatbot-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #f72409;
+    /* same color as the .wrapper .title background */
+    color: #fff;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+
+/* Chatbot Container */
+
+.chatbot-container {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    width: 400px;
+    max-height: 2000px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.wrapper {
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-top: 0px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    background: #f72409;
+    color: #0c0c0c;
+    line-height: 60px;
+    text-align: center;
+    border-bottom: 1px solid #eff320;
+    border-radius: 5px 5px 0 0;
+}
+
+.form {
+    overflow-y: auto;
+    max-height: 250px;
+    padding: 20px 15px;
+}
+
+.inbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bot-inbox .icon,
+.user-inbox .msg-header {
+    background-color: #121213;
+    /* same color as .wrapper .form .inbox .icon background */
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.user-inbox .msg-header {
+    background-color: #e9dd32;
+    /* same color as .form .user-inbox .msg-header p background */
+    color: #333;
+}
+
+.typing-field {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    height: 60px;
+    width: 100%;
+    justify-content: space-evenly;
+    background: #efefef;
+    border-top: 1px solid #d9d9d9;
+    border-radius: 0 0 5px 5px;
+}
+
+.input-data {
+    width: 100%;
+    position: relative;
+    height: 40px;
+    width: 335px;
+}
+
+.input-data input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 100%;
+    outline: none;
+    border: 1px solid transparent;
+    padding: 0 80px 0 15px;
+    border-radius: 3px;
+    font-size: 15px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.input-data input:focus {
+    border-color: #f72409;
+}
+
+.input-data input::placeholder {
+    color: #999999;
+    transition: all 0.3s ease;
+}
+
+.input-data input:focus::placeholder {
+    color: #bfbfbf;
+}
+
+.input-data button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #e9dd32;
+    /* same color as .form .inbox .msg-header p background */
+    color: #0a0a0a;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    height: 30px;
+    width: 65px;
+    font-size: 16px;
+    border: 1px solid #e9dd32;
+    transition: all 0.3s ease;
+}
+
+.wrapper .typing-field .input-data input:valid~button {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.typing-field .input-data button:hover {
+    background: #141414;
+}
